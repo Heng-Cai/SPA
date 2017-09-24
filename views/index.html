@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Single Page Application</title>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel="stylesheet" href="public/css/bootstrap-3.3.7.css">
+	<script src='public/js/jquery-3.2.1.js'></script>
+	<script src='public/js/bootstrap-3.3.7.js'></script>
+</head>
+<body>
+	<!-- bootstrap navbar -->
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>          
+				</button>
+				<a class="navbar-brand" href="#">SPA</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="#todolist">任务清单</a></li>
+					<li><a href="#search">省份简称</a></li>
+					<li><a href="#other">其他</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- /bootstrap navbar --> 
+
+	<div id='home'>
+		<div class='container' style='text-align: center;'>
+			<h1>Single Page App</h1>
+			<h3>(点击导航栏切换页面)</h3>
+		</div>
+	</div>
+
+	<!-- 任务清单 -->
+	<div id='todolist' style='display: none;'>
+		<div class='container'>
+			<p style='text-align: center;'>输入任务，轻松添加；任务完成，一键移除</p>
+			<div class='input-group' style='width: 50%; margin: 0 auto;'>
+				<input type='text' class='form-control' id='list'>
+				<span class='input-group-btn'>
+					<input type='button' class='btn btn-primary' value='添加' id='add'>
+				</span>
+			</div>
+			<div class="well well-sm" style='text-align: center; margin: 20px auto 0px auto; width: 50%'>
+				任务清单
+			</div>
+			<ul class='list-group' id='list-result' style='width: 50%; margin: 0 auto; display: none;'>
+			</ul>
+			<div class="alert" role="alert" id='alert1' style='width: 50%; margin: 0 auto; display: none;text-align: center;'>			
+			</div>
+
+			<div class="alert alert-danger" id='alert2' role="alert" style='width: 50%; margin: 0 auto; display: none;text-align: center;'>
+				<button type='button' class='close'>&times;</button>
+				<p>任务已存在，是否还要添加？</p>
+				<p>
+					<button type='button' class='btn btn-danger' id='yes' style='margin-right: 6%'>确认</button>
+					<button type='button' class='btn btn-default' id='no' style='margin-left: 6%'>取消</button>
+				</p>
+			</div>
+		</div>	
+	</div>
+	<!-- /任务清单 -->
+
+	<!-- 省份简称 -->
+	<div id='search' style='display: none;'>
+		<div class='container'>
+			<p style='text-align: center;'>忘了自己所在省的简称了吗？没关系，一查便知</p>
+			<div class='row'>
+				<div class='col-sm-6'>
+					<div>
+						<input type='text' class='form-control' id='search-index' style='height: 40px;'>
+					</div>
+					<ul class='list-group' id='search-result' style='display: none;'>
+					</ul>	  		
+				</div>
+				<div class='col-sm-6'>
+					<div class='well well-sm'>查询结果</div>
+				</div>
+			</div>
+			<!-- <div class='input-group' style='width: 50%; margin: 0 auto;'>
+				<input type='text' class='form-control' id='search-index'>
+			</div>	
+			<ul class='list-group' id='search-result' style='width: 50%; margin: 0 auto; display: none;'>
+			</ul> -->
+
+		</div>
+	</div>
+	<!-- /省份简称 -->
+
+	<!-- 其他（待更新） -->
+	<div id='other' style='display: none;'>
+	</div>
+	<!-- /其他（待更新） -->
+
+	<script>
+		window.addEventListener('hashchange', function(event) { 
+			if (event.oldURL && event.newURL) {  // 支持 oldURL / newURL 的浏览器
+				var oldHash = event.oldURL.split('#')[1];
+				var newHash = event.newURL.split('#')[1];
+				if (oldHash !== '') {
+					document.getElementById(oldHash).style.display = 'none';
+				}
+				if (newHash !== '') {
+					document.getElementById(newHash).style.display = 'block';
+				}
+			} else {  // 不支持 oldURL / newURL 的浏览器
+				var currentHash = location.href.split('#')[1];
+				if (currentHash !== '') {
+					var hashs = ['todolist', 'search', 'other'];
+					for (var i = 0; i < hashs.length; i++) {
+						document.getElementById(hashs[i]).style.display = 'none';
+					}
+					document.getElementById(currentHash).style.display = 'block';
+				}
+			}		
+		}, false);
+	</script>
+	<script src='public/js/custom.js'></script>
+
+</body>
+</html>
+
+<!--  
+<div class='container'>
+	<div style='text-align: center;'>
+		由于输入框与按钮元素之间存在回车换行，该换行被浏览器渲染为空字符串，因此两者之间会有间距
+		<input type="text" class='form-control' style='width: 50%; display: inline;' id='list'>
+		<input type="button" class='btn btn-primary' value='添加' id='add'>
+	</div>
+	<ul class='list-group' id='list-result' style='display: none;'>
+	</ul>
+</div>
+-->
+
+<!-- 当存在 absolute 定位时，包含元素的宽度指的是 content 宽度加上 padding 宽度；其他情况定位时，包含元素宽度为 content 宽度 -->
+			<!-- <ul class='list-group' style='width: 50%; display: none; position: absolute;'>
+			  <li class='list-group-item'>lll</li>
+			  <li class='list-group-item'>lll</li>
+			</ul> -->

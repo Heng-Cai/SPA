@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+  <div>test</div>	
+</body>
+<script>
+	function clone(obj) {
+		var o;
+		switch (typeof obj) {
+			case 'undefined':
+				break;
+			case 'string':
+			case 'number':
+			case 'boolean':
+			  o = obj;
+			  break;
+			case 'object':
+			  if (obj === null) {
+			  	o = null;
+			  } else if (obj instanceof Array) {
+			  	o = [];
+			  	for (var i = 0; i < obj.length; i++) {
+			  		o[i] = clone(obj[i]);
+			  	}
+			  } else {
+			  	o = {};
+			  	for (var j in obj) {
+			  		o[j] = clone(obj[j]);
+			  	}
+			  }
+				break;
+			default:
+			  alert('function');
+				o = obj;
+		}
+		return o;
+	}
+
+	function countCharacter(str) {
+		var obj = {};
+		for (var i = 0, len = str.length; i < len; i++) {
+			var item = str.charAt(i); // 传入 index, 输出 item
+			if (obj[item] && obj[item].value === item) {
+				obj[item].count +=1;
+			} else {
+				obj[item] = {};
+				obj[item].value = item;
+				obj[item].count = 1;
+			}
+		}
+		return obj;
+	}
+	var a = 'aaaasfghnnnzz'
+	    b = 'china',
+	    c = 8,
+	    d = true,
+	    e = [1, 2],
+	    f = {name: 'china'},
+	    g = [{}, {}],
+	    h = {name: [1, 2]},
+	    fun = function() {};
+	var kkk = countCharacter(a);
+	for (var key in kkk) {
+		console.log(kkk[key].value + '=' + kkk[key].count + ' ');
+	}
+
+</script>
+</html>

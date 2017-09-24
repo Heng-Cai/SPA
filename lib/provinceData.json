@@ -1,0 +1,72 @@
+[ {"id":"beijing","name":"北京","short":"京","key":"北京"},
+	{"id":"tianjin","name":"天津","short":"津","key":"天津"},
+	{"id":"shanghai","name":"上海","short":"沪","key":"上海"},
+	{"id":"chongqing","name":"重庆","short":"渝","key":"重庆"},
+	{"id":"neimenggu","name":"内蒙古","short":"蒙","key":"呼和浩特"},
+	{"id":"xinjiang","name":"新疆","short":"新","key":"乌鲁木齐"},
+	{"id":"xizang","name":"西藏","short":"藏","key":"拉萨"},
+	{"id":"ningxia","name":"宁夏","short":"宁","key":"银川"},
+	{"id":"guangxi","name":"广西","short":"桂","key":"南宁"},
+	{"id":"xianggang","name":"香港","short":"港","key":"香港"},
+	{"id":"aomen","name":"澳门","short":"澳","key":"澳门"},
+	{"id":"heilongjiang","name":"黑龙江","short":"黑","key":"哈尔滨"},
+	{"id":"jilin","name":"吉林","short":"吉","key":"长春"},
+	{"id":"liaoning","name":"辽宁","short":"辽","key":"沈阳"},
+	{"id":"hebei","name":"河北","short":"冀","key":"石家庄"},
+	{"id":"shanxi","name":"山西","short":"晋","key":"太原"},
+	{"id":"qinghai","name":"青海","short":"青","key":"西宁"},
+	{"id":"shandong","name":"山东","short":"鲁","key":"济南"},
+	{"id":"henan","name":"河南","short":"豫","key":"郑州"},
+	{"id":"jiangsu","name":"江苏","short":"苏","key":"南京"},
+	{"id":"anhui","name":"安徽","short":"皖","key":"合肥"},
+	{"id":"zhejiang","name":"浙江","short":"浙","key":"杭州"},
+	{"id":"fujian","name":"福建","short":"闽","key":"福州"},
+	{"id":"jiangxi","name":"江西","short":"赣","key":"南昌"},
+	{"id":"hunan","name":"湖南","short":"湘","key":"长沙"},
+	{"id":"hubei","name":"湖北","short":"鄂","key":"武汉"},
+	{"id":"guangdong","name":"广东","short":"粤","key":"广州"},
+	{"id":"taiwan","name":"台湾","short":"台","key":"台北"},
+	{"id":"hainan","name":"海南","short":"琼","key":"海口"},
+	{"id":"gansu","name":"甘肃","short":"甘/陇","key":"兰州"},
+	{"id":"shanxi","name":"陕西","short":"陕/秦","key":"西安"},
+	{"id":"sichuan","name":"四川","short":"川/蜀","key":"成都"},
+	{"id":"guizhou","name":"贵州","short":"贵/黔","key":"贵阳"},
+	{"id":"yunnan","name":"云南","short":"云/滇","key":"昆明"}
+]
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
