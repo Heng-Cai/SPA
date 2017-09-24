@@ -92,6 +92,7 @@ $(document).ready(function() {
   		// 重置输入缓存
   		indexCache = '';
   		$('#search-result').empty().hide();
+  		$('.col-sm-6 .well').text('查询结果');
   	} else if (index === indexCache) {
   		// 两次输入内容一致时，不进行 AJAX 请求
   		return false;
@@ -116,7 +117,7 @@ $(document).ready(function() {
   						.each(function(indx) {
   							$(this).on('click', function() {
 						  			$('#search-result').hide();
-						  			$('.col-sm-6 .well').text(msg[indx].name + ' 简称： ' + msg[indx].short)
+						  			$('.col-sm-6 .well').text(msg[indx].name + ' 简称： ' + msg[indx].short);
 						  	});
   					})
   				}
