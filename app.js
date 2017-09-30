@@ -115,6 +115,8 @@ var server = http.createServer(function(req, res) {
 
 server.listen(8888);
 
+
+
 // var data = {};
 			// if (index.charCodeAt() >= 65 && index.charCodeAt() >=122) {
 			// 	data.id = index;
